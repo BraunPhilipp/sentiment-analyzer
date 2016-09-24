@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tracker_id: 
+  date: 2016-05-08 01:11:21
+  sentiment: 1
+
+two:
+  tracker_id: 
+  date: 2016-05-08 01:11:21
+  sentiment: 1

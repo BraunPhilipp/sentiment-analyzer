@@ -1,0 +1,22 @@
+<% provide(:title, "Contact") %>
+
+<div class="container">
+
+<form class="contact-form" action="/sender" method="post">
+  <input type="text" class="form-control" placeholder="Name" name="name" />
+  <input type="text" class="form-control" placeholder="Email" name="email" />
+  <textarea placeholder="Comment ..." name="comment"></textarea>
+  <button class="send" type="submit">Send</button>
+</form>
+
+</div>
+
+<div class="contact row">
+  <div class="info col-sm-4">
+    Wenti</br>
+    Rütscherstrasse 6</br>
+    52072 Aachen</br>
+    Germany</br>
+  </div>
+  <iframe class="map col-sm-8" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJP0XhpXeZwEcRkqKqTPwsqwc&key=AIzaSyClK519_rFZbUOvOypuEMJmFmkRPhS-XDA"></iframe>
+</div>

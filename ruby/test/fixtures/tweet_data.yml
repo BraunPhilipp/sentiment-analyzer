@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tweet_id: 
+  tweet_date: 2016-05-04 23:13:22
+  tweet_text: MyText
+  tweet_lang: MyString
+  tweet_retweet_count: 1
+  tweet_favorite_count: 1
+  tweet_user_id: 
+  tweet_user_verified: 1
+  tweet_sentiment: 1
+  tweet_score: 1
+  tracker_id: 
+
+two:
+  tweet_id: 
+  tweet_date: 2016-05-04 23:13:22
+  tweet_text: MyText
+  tweet_lang: MyString
+  tweet_retweet_count: 1
+  tweet_favorite_count: 1
+  tweet_user_id: 
+  tweet_user_verified: 1
+  tweet_sentiment: 1
+  tweet_score: 1
+  tracker_id: 

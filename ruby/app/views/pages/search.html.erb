@@ -1,0 +1,94 @@
+<% provide(:title, "Search") %>
+
+<div class="container content">
+
+  <div class="selected_tags"></div>
+
+  <div class="row search">
+
+  <div class="col-sm-8 tag">
+    <select id="tag_source" class="form-control">
+      <option value="raw_sentiment">Raw Sentiment</option>
+      <option value="cum_sentiment">Cumulated Sentiment</option>
+    </select>
+    <select id="tag_keyword" class="form-control">
+      <% current_keywords.each do |tracker| %>
+        <option value="<%= tracker.keyword %>"><%= tracker.keyword %></option>
+      <% end %>
+    </select>
+
+  </div>
+
+  <button id="tag_add" class="col-sm-2 btn btn-default">Add</button>
+  <button id="tag_search" class="col-sm-2 btn btn-default">Search</button>
+
+  </div>
+
+  <div class='loader tetrominos'>
+    <div class='tetromino box1'></div>
+    <div class='tetromino box2'></div>
+    <div class='tetromino box3'></div>
+    <div class='tetromino box4'></div>
+  </div>
+
+  <div class="results">
+    Please enter your query in the search interface above</br>
+    Additional keywords can be added over the "ADD" button</br>
+    To add new keywords, drop a mail at mail(at)wenti.de</br>
+    Feedback is always highly appreciated</br>
+  </div>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('#tag_add').click(function() {
+      /* Create new tags */
+      var tag = '<div class="tag" id="added">' +
+        '<input type="text" readonly="readonly" id="tag_source" value="'+$('.tag:last #tag_source').val()+'" />' +
+        '<input type="text" readonly="readonly" id="tag_keyword" value="'+$('.tag:last #tag_keyword').val()+'" />' +
+        '<div id="tag_remove" class="glyphicon glyphicon-remove"></div>' +
+        '<div class="clear"></div>'
+        '</div>';
+      if ($('.tag:last #tag_keyword').val() != '') { $('.selected_tags').append(tag); };
+    });
+
+    $(document).on('click', '#tag_remove', function() {
+      /* Remove existing tags if more than one tag element exists */
+      var $tags = $('.tag');
+      if ($tags.length > 1) { $(this).parent().remove(); }
+    });
+
+    $('#tag_search').click(function() {
+      var url_params = '';
+
+      $('.tag').each(function(i, obj) {
+        if ($(this).find('#tag_keyword').val() != '') {
+          url_params += $(this).find('#tag_source').val() + ':' + $(this).find('#tag_keyword').val() + ',';
+        }
+      });
+
+      /* Post Request */
+      if (url_params != '') {
+
+        $('.results').html('');
+        $('.results').html('<iframe src="/chart?q='+url_params+'" frameborder="0" scrolling="no" id="chart"></iframe>');
+        $('#chart').hide();
+
+        $(".loader").show();
+
+        setTimeout(function () {
+          $(".loader").hide();
+          $('#chart').show()
+        }, 1000);
+
+      }
+      else {
+        alert('Please enter a valid keyword!')
+      }
+
+    });
+
+  });
+  </script>
+
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  volume: 1
+  min_id: 
+  max_id: 
+
+two:
+  keyword: MyString
+  volume: 1
+  min_id: 
+  max_id: 

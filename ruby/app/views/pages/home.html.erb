@@ -1,0 +1,51 @@
+<% provide(:title, "Home") %>
+
+<div id="white">
+  <div class="container">
+    <h1>Welcome to Wenti.de</h1>
+    <h2>Tackling Uncertainty Everyday</h2>
+  </div><!--/container-->
+</div>
+
+<div id="green">
+
+<div class="container content">
+
+  <ul class="overview fa-ul">
+    <li><div class="icon glyphicon glyphicon-leaf"></div><div class="text">Free Sentiment Charting Tool</div></li>
+    <li><div class="icon glyphicon glyphicon-leaf"></div><div class="text">Based on more than 20,000 Reviews</div></li>
+    <li><div class="icon glyphicon glyphicon-leaf"></div><div class="text">Direct API Access (CSV/JSON)</div></li>
+    <li><div class="icon glyphicon glyphicon-leaf"></div><div class="text">Realtime & Histroical Data</div></li>
+  </ul>
+
+</div>
+
+</div>
+
+<div class="container content">
+
+  <div class="row">
+      <div class="col-sm-4 counter">
+        <div id="count"><%= number_with_delimiter(num_keywords, delimiter: ",") %></div>
+        <div id="title">Keywords</div>
+      </div>
+      <div class="col-sm-4 counter">
+        <div id="count"><%= number_with_delimiter(num_tweets, delimiter: ",") %></div>
+        <div id="title">Tweets</div>
+      </div>
+      <div class="col-sm-4 counter">
+        <div id="count"><%= number_with_delimiter(num_reviews, delimiter: ",") %></div>
+        <div id="title">Reviews</div>
+      </div>
+  </div>
+
+</div>
+
+<div id="green">
+<div class="container content">
+
+<h1>Background</h1>
+<p>Wenti tracks historical and realtime data from Twitter. Tweet Sentiment is analyzed using simple Bayesian Classification. Calculated Sentiment Scores can be viewed through our charting tool or directly downloaded through a REST API. </p>
+
+</div>
+</div>
