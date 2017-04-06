@@ -1,9 +1,9 @@
-##Twitter Sentiment Analyzer
+## Twitter Sentiment Analyzer
 
-###Outline
+### Outline
 The provided code can be used to analyze tweet sentiment based on various keywords in realtime. Tweets are scored using basic Bayesian Classifier. The underlying dataset is based on various reviews from Amazon and Walmart. Therefore, the tool is easily adjustable for multilingual analysis.
 
-###Module Structure
+### Module Structure
 ```
 /api - Access to Ruby on Rails API
 /doc - Documents related to the project
@@ -18,10 +18,10 @@ main.py - Bundled Functions
 sentiment.sh - Sentiment Analyzer
 tweets.sh - Tweet Collector
 ```
-###Tools
+### Tools
 The Twitter Sentiment Classifier is powered using Python and Ruby on Rails. Tweets are collected using Twitter's REST API ( _TWITTER MODULE_ ). These tweets are then scored based on already collected reviews in the database ( _REVIEWS MODULE_ ). The exchange between the database and Python code is handled using a Ruby on Rails REST API ( _API MODULE_ ). Direct access to the MYSQL Server is also possible using the _MYSQL MODULE_. Further libraries such as NLTK are used to improve performance as well as accuracy of the analyzer.
 
-###Bayesian Classifier
+### Bayesian Classifier
 ```
 P( WORD | POSITIVE ) = ( WORD OCCURENCE IN POSITIVE SET + 1 ) / ( ALL POSITIVE WORDS )
 ```
@@ -31,10 +31,10 @@ P( POSTIVE SENTENCE ) = P( POSITIVE NORMALIZED ) * P( WORD1 | POSTIVE ) * P( WOR
 ```
 _To find word data quickly words could be stored in a dictionary._
 
-###Filtering
+### Filtering
 Because of Twitter's open platform the amount of spam is extremely high. The amount of useful tweets can be increased using certain rules such as removing tweets containing @, ?, $, or tweets in a different language.
 
-###Setup
+### Setup
 **Install Ruby on Rails**
 
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-passenger-and-nginx-on-ubuntu-14-04
